@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const input_5 = document.querySelector('textarea[placeholder="Message"]')
     const signup = document.querySelector("input[type='submit']")
     const tips = document.createElement("span")
+    input_4.type = "text"
+    signup.type = "button"
+    tips.style.fontFamily = "bodoni moda Regular"
     setTimeout(() => {
         document.querySelector("div[name='form']").appendChild(tips)
     }, 1000)
@@ -41,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         tips.style.color = color
         timer = setTimeout(() => (tips.innerText = ""), 6000)
     }
-    signup.type = "button"
     signup.onclick = () => {
         if (submitted) {
             notify("You have already submitted!", "green")
