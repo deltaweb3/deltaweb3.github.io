@@ -23,36 +23,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById("__framer-badge-container").style.display = "none"
 
     //Form
-    const form_1 = document.querySelector('div[name="name"]')
-    const form_2 = document.querySelector('div[name="email"]')
-    const form_3 = document.querySelector('div[name="company"]>div:nth-child(1)')
-    const form_4 = document.querySelector('div[name="company"]>div:nth-child(2)')
-    const form_5 = document.querySelector('div[name="message"]')
-    const input_1 = document.createElement("input")
-    const input_2 = document.createElement("input")
-    const input_3 = document.createElement("input")
-    const input_4 = document.createElement("input")
-    const input_5 = document.createElement("textarea")
+    const input_1 = document.querySelector('input[placeholder="Name"]')
+    const input_2 = document.querySelector('input[placeholder="Email"]')
+    const input_3 = document.querySelector('input[placeholder="Company"]')
+    const input_4 = document.querySelector('input[placeholder="Title"]')
+    const input_5 = document.querySelector('textarea[placeholder="Message"]')
+    const signup = document.querySelector("input[type='submit']")
     const tips = document.createElement("span")
-
-    input_1.style.cssText = input_2.style.cssText = "flex: none;height: 50px;width: 100%"
-    input_3.style.cssText = input_4.style.cssText = "flex: 1 0 0px;height: 50px;width: 1px"
-    input_5.style.cssText = "flex: none;height: 300px;width: 100%"
-    input_1.placeholder = "Name"
-    input_2.placeholder = "Email"
-    input_3.placeholder = "Company"
-    input_4.placeholder = "Title"
-    input_5.placeholder = "Message";
-    [input_1, input_2, input_3, input_4, input_5].map((v) => {
-        v.style.cssText += "background-color: #f2f2f2;font-family:'Bodoni Moda';font-size:18px;outline:none;padding:12px;border:none;position:relative;overflow: hidden;border-radius: 5px;"
-    })
-
+    input_4.type = "text"
+    signup.type = "button"
+    tips.style.fontFamily = "bodoni moda Regular"
     setTimeout(() => {
-        form_1.parentNode.replaceChild(input_1, form_1)
-        form_2.parentNode.replaceChild(input_2, form_2)
-        form_3.parentNode.replaceChild(input_3, form_3)
-        form_4.parentNode.replaceChild(input_4, form_4)
-        form_5.parentNode.replaceChild(input_5, form_5)
         document.querySelector("div[name='form']").appendChild(tips)
     }, 1000)
 
@@ -63,8 +44,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         tips.style.color = color
         timer = setTimeout(() => (tips.innerText = ""), 6000)
     }
-    const signup = document.querySelector("div[name='sign up']")
-    signup.style.cursor = "pointer"
     signup.onclick = () => {
         if (submitted) {
             notify("You have already submitted!", "green")
@@ -114,4 +93,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                 tips.innerText = ""
             })
     }
+
+    setTimeout(() => {
+        document.querySelector("#team > div > div.framer-11gi12d > div.framer-12lqqoo-container > div > div > div.framer-13ijm5y > div.framer-1932sbs > div > h3").textContent = "Grace"
+        document.querySelector("#team > div > div.framer-11gi12d > div.framer-13vvoda-container > div > div > div.framer-13ijm5y > div.framer-1932sbs > div > h3").textContent = "Mizuno"
+        document.querySelector("#team > div > div.framer-11gi12d > div.framer-13qjnuk-container > div > div > div.framer-13ijm5y > div.framer-1932sbs > div > h3").textContent = "Laura"
+        document.querySelector("#team > div > div.framer-11gi12d > div.framer-13vvoda-container > div > div > div.framer-fse472 > div > img").srcset = "images/Mizuno.jpg"
+        document.querySelector("#team > div > div.framer-11gi12d > div.framer-13qjnuk-container > div > div > div.framer-fse472 > div > img").srcset = "images/Ruby.jpg";
+        ((_) => _.parentElement.removeChild(_))(document.querySelector("#team > div > div.framer-11gi12d > div.framer-13qjnuk-container > div > div > div.framer-13ijm5y > div.framer-1932sbs > a"));
+        ((_) => _.parentElement.removeChild(_))(document.querySelector("#network > div > div.framer-1rbh8zh > div.framer-kjiw88"))
+    }, 1000)
 })
